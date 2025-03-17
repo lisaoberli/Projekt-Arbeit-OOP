@@ -142,7 +142,7 @@ namespace ProjectManagement
             else
             {
                 MessageBox.Show("Kein Projekt mit diesem Tag gefunden.");
-                UpdateProjectList();  // Falls keine Übereinstimmung gefunden wurde, zeige alle Projekte
+                UpdateProjectList(); 
             }
         }
 
@@ -193,11 +193,11 @@ namespace ProjectManagement
             txtRequirements.Clear();
             txtInfoContent.Clear();
             txtInfoTags.Clear();
-            txtSearchTag.Clear(); // Tag-Suche zurücksetzen
+            txtSearchTag.Clear(); 
             lstProjectInfos.Items.Clear();
             selectedProject = null;
 
-            // Alle Projekte wieder anzeigen
+            
             UpdateProjectList();
         }
         private void btnSearchByTag_Click(object sender, EventArgs e)
@@ -210,7 +210,7 @@ namespace ProjectManagement
                 return;
             }
 
-            // Suche Projekte mit dem angegebenen Tag
+            
             var matchingProjects = projects
                 .Where(p => p.Informations.Any(info => info.Tags.Any(tag => tag.ToLower() == searchTag)))
                 .ToList();
@@ -227,7 +227,7 @@ namespace ProjectManagement
             else
             {
                 MessageBox.Show("Kein Projekt mit diesem Tag gefunden.");
-                UpdateProjectList(); // Falls keine Übereinstimmung gefunden wurde, zeige alle Projekte
+                UpdateProjectList();
             }
         }
 
